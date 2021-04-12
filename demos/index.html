@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tama</title>
+    <link href="reset.css" rel="stylesheet" />
+    <style>
+      div {
+        border: 1px solid blueviolet;
+        margin: 10px 20px;
+      }
+
+      header,
+      footer {
+        margin: 10px;
+        text-align: center;
+      }
+
+      #signup-form label:first-child {
+        display: inline-block;  
+        width: 150px;        
+      }
+
+      div:nth-child(3):hover {
+          font-size: 2rem;
+      }
+
+      div:last-child button {
+        display: block;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Koteret</h1>
+    </header>
+    <main id="signup-form">
+      <div>
+        <label>Text</label>
+        <input type="text" />        
+      </div>
+      <div>
+        <label>Checkbox</label>
+        <input type="checkbox" />
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" />
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" />
+      </div>
+      <div>
+        <label>Date</label>
+        <input type="date" />
+      </div>
+      <div>
+        <label>Range 18 - 90</label>
+        <input type="range" min="18" max="90" />
+      </div>
+      <div style="font-family: ;">
+        <label>Number</label>
+        <input type="number" />
+      </div>
+      <div>
+          <button onclick="save()">SAVE</button>
+      </div>
+    </main>
+    <footer>
+      <h2>Footer</h2>
+    </footer>
+
+    <script>
+        function save() {
+            const inputs = document.querySelectorAll('input');
+            const values = [];
+
+            for(const input of inputs) {
+                values.push(input.value)
+            }
+
+            alert(values.join(','));
+        }
+        // const button = document.querySelector
+    </script>
+  </body>
+</html>
